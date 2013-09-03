@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:/D:/ws/quiz/schemas/moodle-quiz.xsd">
+    <question>
+        <category>
+            <text>
+            </text>
+        </category>
+        <questiontext>
+            <text>
+            </text>
+        </questiontext>
+    </question>
+    <question>
+        <category>
+            <text>
+            </text>
+        </category>
+        <questiontext>
+            <text>
+            </text>
+        </questiontext>
+    </question>
+</quiz>

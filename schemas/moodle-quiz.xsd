@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="quiz">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="description"/>
+                <xs:element maxOccurs="unbounded" name="question">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="category" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="text"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="name" minOccurs="0"/>
+                            <xs:element name="questiontext" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="text"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="format"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="answer" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="text"/>
+                                        <xs:element name="feedback">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="text"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="fraction" type="fractionType"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="shuffleanswers" minOccurs="0"/>
+                            <xs:element name="single" minOccurs="0"/>
+                            <xs:element name="answernumbering" minOccurs="0" type="answerNumberingType"/>
+                            <xs:element minOccurs="0" name="penalty"/>
+                            <xs:element minOccurs="0" name="generalfeedback"/>
+                            <xs:element minOccurs="0" name="defaultgrade"/>
+                            <xs:element minOccurs="0" name="hidden"/>
+                            <xs:element minOccurs="0" name="subquestion">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="text"/>
+                                        <xs:element name="answer">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="text"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element minOccurs="0" name="partiallycorrectfeedback"/>
+                            <xs:element minOccurs="0" name="incorrectfeedback"/>
+                        </xs:sequence>
+                        <xs:attribute name="type" type="questionType"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="questionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="multichoice"/>
+            <xs:enumeration value="truefalse"/>
+            <xs:enumeration value="shortanswer"/>
+            <xs:enumeration value="matching"/>
+            <xs:enumeration value="cloze"/>
+            <xs:enumeration value="essay"/>
+            <xs:enumeration value="numerical"/>
+            <xs:enumeration value="description"/>
+            <xs:enumeration value="category"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="questiontextFormatType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="html"/>
+            <xs:enumeration value="moodle_auto_format"/>
+            <xs:enumeration value="plain_text"/>
+            <xs:enumeration value="markdown"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- fractions are decimal numbers from 1 to 100 -->
+    <xs:simpleType name="fractionType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+            <xs:maxExclusive value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="answerNumberingType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="none"/>
+            <xs:enumeration value="abc"/>
+            <xs:enumeration value="ABCD"/>
+            <xs:enumeration value="123"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!--
+        <xs:attribute name="type" type="questionType"/>
+    -->
+</xs:schema>

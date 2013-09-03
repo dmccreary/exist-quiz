@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/moodle-quiz.xsd">
+    <description>Overview of NoSQL concepts</description>
+    <question type="truefalse">
+        <questiontext>
+            <text>Relational databases were originally designed to leverage distributed computing architectures</text>
+        </questiontext>
+        <answer>
+            <text>false</text>
+            <feedback>
+                <text>Most relational database systems were designed around single CPU mainframe and minicomputer systems.</text>
+            </feedback>
+        </answer>
+    </question>
+    <question type="truefalse">
+        <category>
+            <text>
+            </text>
+        </category>
+        <questiontext>
+            <text>Key-values stores are searchable by the data within the value portion of a key-value pair.</text>
+        </questiontext>
+        <answer>
+            <text>false</text>
+            <feedback>
+                <text>You can only lookup items in a key-value store based on the data within a key.</text>
+            </feedback>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <questiontext>
+            <text>Which of the following are considered NoSQL database architectural patterns:<br/>
+                a) binary trees<br/>
+                b) hash-tables<br/>
+                c) graph stores<br/>
+                d) object-oriented databases<br/>
+            </text>
+        </questiontext>
+        <answer>
+            <text>b</text>
+            <feedback>
+                <text>The four new architectures are key-values stores, column-family stores, graph stores and document stores.</text>
+            </feedback>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <questiontext>
+            <text>An XML database is considered what type of NoSQL database pattern:<br/>
+                a) key-value store<br/>
+                b) column-family store<br/>
+                c) graph stores<br/>
+                d) document store<br/>
+            </text>
+        </questiontext>
+        <answer>
+            <text>d</text>
+            <feedback>
+                <text>XML databases hold hierarchical documents where all elements and attributes can be queried.</text>
+            </feedback>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <questiontext>
+            <text>Which of the following patterns is used in distributed computing.
+            a) move data to the queries
+            b) move queries to the data
+            </text>
+        </questiontext>
+        <answer>
+            <text>a</text>
+            <feedback>
+                <text>Queries are generally much smaller than data so it is usually much more efficient to move
+                queries to the data.</text>
+            </feedback>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <questiontext>
+            <text>Which of the following best describes the use of consistent hashing
+                a) a way to assign a data element to a node in a cluster<br/>
+                b) a way to encrypt data to prevent unauthorized access<br/>
+                c) a way to lookup joins when tables are on different nodes
+                d) a way to keep data consistent within a table
+            </text>
+        </questiontext>
+        <answer>
+            <text>a</text>
+            <feedback>
+                <text>Consistent hashing allows any node in a cluster to determine what node a data item is located.</text>
+            </feedback>
+        </answer>
+    </question>
+</quiz>
